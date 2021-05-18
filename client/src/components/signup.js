@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import uniqid from 'uniqid';
 import axios from "axios";
 
+
+//styles
+import './component_style/signup.css';
 function Signup(){
     //hooks
     const[first_name, set_first_name] = useState('');
@@ -20,7 +23,7 @@ function Signup(){
             password : password,
             user_id : uniqid()
         }
-        axios.post('https://localhost:8000/api/user/add_new_user', user_account).then(res=>{
+        axios.post('http://localhost:8000/api/user/add_new_user', user_account).then(res=>{
             alert(res.data)
         }).then(err => {
             console.log(err)
